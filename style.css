@@ -23,6 +23,7 @@ body {
     justify-content: center;
     align-items: center;
     position: fixed;
+
 }
 
 .navlist li {
@@ -34,7 +35,10 @@ body {
     text-transform: uppercase;
     font-size: 1.2rem;
     color: #fff;
+    outline: none;
+    position: relative;
 }
+
 
 .left-container,
 .right-container {
@@ -82,12 +86,142 @@ body {
 
 }
 
-.content h2 {
+.content .intro {
     font-size: 2rem;
+    color: #fff;
 
 }
 
 .content h1 {
-    font-size: 3rem;
+    font-size: 4rem;
+    color: #5db9ee
+}
 
+.content .detail {
+    font-size: 1.1rem;
+    color: #fff;
+    max-width: 38rem;
+    margin: 1.1rem 0 3rem 0;
+    line-height: 1.8rem;
+}
+
+.btn-container {
+    border: .1rem solid #5db9ee;
+    font-size: 1.1rem;
+    padding: .8rem 1.5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+button:nth-child(1) {
+    background-color: #5db9ee;
+}
+
+button:nth-child(2) {
+    background-color: transparent;
+    color: #5db9ee;
+    margin-left: 2rem;
+}
+
+button:nth-child(3) {
+    background-color: #5db9ee;
+    margin-left: 2rem;
+}
+
+button:nth-child(1):hover {
+    background: transparent;
+    color: #5db9ee;
+}
+
+button:nth-child(2) :hover {
+    background: #5db9ee;
+    color: #5db9ee;
+}
+
+button:nth-child(1) :hover {
+    background: transparent;
+    color: #5db9ee;
+}
+
+.icons.fa-brands {
+    cursor: pointer;
+    background: linear-gradient(#fff, #3877FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Circle design */
+.design {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 23rem;
+    height: 23rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.design .circle {
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Outer red circle */
+.design .circle:nth-child(1) {
+    width: 35rem;
+    height: 35rem;
+    background: linear-gradient(90deg, transparent 50%, #262525 50%);
+}
+
+/* Inner white circle */
+.design .circle:nth-child(2) {
+    width: 27rem;
+    height: 27rem;
+    background-image: url('image.jpeg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: .1rem solid white;
+    box-shadow:
+        0 0 1rem #fff,
+        inset 0 0 1rem #fff,
+        0 0 2rem #3877FF,
+        inset 0 0 2rem #3877FF,
+        0 0 4rem #3877FF,
+        inset 0 0 4rem #3877FF;
+}
+
+.navlist li a::after,
+.navlist .active::after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: .1rem;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.5s;
+}
+
+.navlist li a:hover::after,
+.navlist .active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: #888888;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
 }
